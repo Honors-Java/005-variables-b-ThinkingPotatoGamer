@@ -1,5 +1,11 @@
+int width = 500;
+int height = 500;
+int movement = 0;
+
 void setup() {
-	size(500, 500);
+	size(width, height);
+  rectMode(CENTER);
+  ellipseMode(CENTER)
 }
 
 void draw() {
@@ -19,7 +25,12 @@ void draw() {
   background(255);
   stroke(0);
 
+  fill(120);
+  rect(width / 3, height / 3, width / 2, height / 2);
 
+  fill(255);
+  ellipse((width / 3) + movement, (height / 3) + movement, width / 6, height / 6);
+  movement++;
   
 
 }
