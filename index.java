@@ -1,36 +1,56 @@
-int width = 500;
-int height = 500;
-int movement = 0;
+int ellipseLocationX = mouseX + ((int) random(-20, 20));
+int ellipseLocationY = mouseY + ((int) random(-20, 20));
+int ellipseWidth = 10;
+int ellipseHeight = 10;
+
+int rectLocationX = (int) random(0, 500);
+int rectLocationY = (int) random(0, 500);
+int rectWidth = (int) random(10, 300);
+int rectHeight = (int) random(10, 300);
+
+
+int r = (int) random(0,255);
+int g = (int) random(0,255);
+int b = (int) random(0,255);
+
+int rectR = (int) random(0,255);
+int rectG = (int) random(0,255);
+int rectB = (int) random(0,255);
 
 void setup() {
-	size(width, height);
+	size(500, 500);
   rectMode(CENTER);
-  ellipseMode(CENTER)
+  ellipseMode(CENTER);
+  background(255);
 }
 
 void draw() {
-// Step 1: Write code that draws the following screenshots 
-// with hard-coded values. (Feel free to use colors 
-// instead of grayscale.)
-
-// Step 2: Replace all of the hard-coded numbers with 
-// variables.
-
-// Step 3: Write assignment operations in draw() that 
-// change the value of the variables.
-// For example, “variable1 = variable1 + 2;”. 
-
-// Step 4: Make it so when the program runs the ball slides off the screen exiting at the point (500, 500)
-
-  background(255);
+  r = (int) random(0, 255);
+  g = (int) random(0, 255);
+  b = (int) random(0, 255);
+  
+  ellipseLocationX = mouseX + ((int) random(-40, 40));
+  ellipseLocationY = mouseY + ((int) random(-40, 40));
+  
+  fill(rectR, rectB, rectG);
+  rect(rectLocationX, rectLocationY, rectWidth, rectHeight);
+  fill(r, g, b);
+  ellipse(ellipseLocationX, ellipseLocationY, ellipseWidth, ellipseHeight);
   stroke(0);
-
-  fill(120);
-  rect(width / 3, height / 3, width / 2, height / 2);
-
-  fill(255);
-  ellipse((width / 3) + movement, (height / 3) + movement, width / 6, height / 6);
-  movement++;
   
 
+}
+
+void mousePressed(){
+  background(255);
+  rectR = (int) random(0,255);
+  rectG = (int) random(0,255);
+  rectB = (int) random(0,255);
+
+  fill(rectR, rectG, rectB);
+  rectLocationX = (int) random(0, 500);
+  rectLocationY = (int) random(0, 500);
+  rectWidth = (int) random(10, 300);
+  rectHeight = (int) random(10, 300);
+  
 }
